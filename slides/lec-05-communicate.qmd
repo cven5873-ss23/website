@@ -1,14 +1,14 @@
 ---
-title: "Joining data & communicating results with Quarto"
-subtitle: "CVEN 5837 - Summer 2023"
-author: "Lars Schöbitz"
+title: "{{< var md-06.title >}}"
+subtitle: "{{< var course.long-title >}}"
+author: "{{< var author >}}"
 format: 
   revealjs: 
-    theme: slides.scss
+    theme: ../style/slides.scss
     transition: fade
     slide-number: true
     logo: img/logo.png
-    footer: "https://cven5873-ss23.github.io/website/"
+    footer: "[{{< fa link >}} {{< var course.site-short >}}]({{< var course.site >}})"
 editor: source
 execute:
   freeze: auto
@@ -16,7 +16,6 @@ params:
     week: 6
 ---
 
-<script defer data-domain="cven5837-ss23.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 
 ```{r}
 library(tidyverse)
@@ -30,7 +29,7 @@ ggplot2::theme_set(ggplot2::theme_gray(base_size = 16))
 
 ```{r}
 
-lobj1 <- readr::read_csv(here::here("data/tbl-02-cven5837-ss23-learning-objectives.csv")) |>
+lobj1 <- readr::read_csv(here::here("data/tbl-02-learning-objectives.csv")) |>
   dplyr::filter(week == params$week) |>
   dplyr::pull(learning_objectives)
 
@@ -560,7 +559,7 @@ No slide breaks to remove, no citation style to change, no headings to re-level.
 
 ## Clone GitHub repository from GitHub
 
-1. Open the GitHub Organisation for the course: <https://github.com/cven5873-ss23/>
+1. Open the GitHub Organisation for the course: [{{< var course.github-org >}}]({{< var course.github-org >}})
 2. Locate the **wk-06** repository with your username `wk-06-GITHUB-USERNAME`
 3. Follow along with me
 
@@ -604,28 +603,29 @@ tibble(
 ```
 
 
-# Homework week 5 {background-color="#0F4C81"}
+# Homework week 6 {background-color="#0F4C81"}
 
 ## Homework due dates
 
-- All material on [course website](https://cven5873-ss23.github.io/website/weeks/wk-05.html)
-- Homework assignment & learning reflection due: **Friday, 14th July**
+- All material on [course website]({{< var course.site >}}weeks/wk-06.html)
+- Homework assignment & learning reflection due: [**{{< var md-06.homework-due >}}**]{.highlight-yellow}
 
 # Capstone Project Report
 
 ## Information
 
-- All material shared on website by Monday, 17th July
-- Due date for report: Friday, 28th July
+- All material on [course website]({{< var course.site >}}weeks/wk-07.html)
+- Due date for report: [**{{< var md-08.homework-due >}}**]{.highlight-yellow}
 
 # Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
-## 
+## Acknowledgements
 
 A large proportion of these slides are taken from [Mine Çetinkaya Rundel's "Hello Quarto" presentation](https://mine.quarto.pub/hello-quarto/#/hello-quarto-title) & [Thomas Mock's "Quarto for the Curious" presentation](https://jthomasmock.github.io/quarto-presentation/#/TitleSlide)
 
 Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
-Access slides as [PDF on GitHub](https://github.com/cven5873-ss23/website/raw/main/slides/lec-05-communicate.pdf)
+
+Access slides as [PDF on GitHub]({{< var course.github-org >}}/website/raw/main/slides/lec-05-communicate.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
 

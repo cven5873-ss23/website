@@ -1,0 +1,54 @@
+author: "Lars Schöbitz"
+
+course:
+  code: "cven5999-ss25"
+  short-title: "cven5999-ss25"
+  long-title: "CVEN 5999 - Summer 2025"
+  site: "https://cven5999-ss25.github.io/website/"
+  site-short: "cven5999-ss25.github.io/website/"
+  github-org: "https://github.com/cven5999-ss25"
+  
+platforms:
+  posit-cloud: "https://posit.cloud/spaces/658092/"
+  posit-cloud-access: "join?access_code=dLb2qZ63VzXDcDP8VCY614F70S8DhyS8ucqfzfoe"
+  pre-course-survey: "https://forms.gle/uCcoH4SvoTasDeEF7"
+
+md-01:
+  title: "Get ready for the course"
+  date: "2025-06-02"
+  homework-due: "2025-06-06"
+
+md-02:
+  title: "Welcome! & Data Science Life-cycle"
+  date: "2025-06-09"
+  homework-due: "2025-06-13"
+  
+md-03:
+  title: "Exploratory data analysis using visualization & Data organization in spreadsheets"
+  date: "2025-06-16"
+  homework-due: "2025-06-20"
+  
+md-04:
+  title: "Data transformation and descriptive statistics"
+  date: "2025-06-23"
+  homework-due: "2025-06-27"
+  
+md-05:
+  title: "Concept of tidy data, vectors and pivoting"
+  date: "2025-06-30"
+  homework-due: "2025-07-04"
+  
+md-06:
+  title: "Joining data & data communication using Quarto"
+  date: "2025-07-07"
+  homework-due: "2025-07-11"
+  
+md-07:
+  title: "Capstone Project"
+  date: "2025-07-14"
+  homework-due: "2025-07-18"
+  
+md-08:
+  title: "Capstone Project submission due date"
+  date: "2025-07-21"
+  homework-due: "2025-07-25"

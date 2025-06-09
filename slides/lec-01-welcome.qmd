@@ -1,14 +1,14 @@
 ---
-title: "Welcome to Data Analytics for Development"
-subtitle: "CVEN 5837 - Summer 2023"
-author: "Lars Schöbitz"
+title: "{{< var md-02.title >}}"
+subtitle: "{{< var course.long-title >}}"
+author: "{{< var author >}}"
 format: 
   revealjs: 
-    theme: slides.scss
+    theme: ../style/slides.scss
     transition: fade
     slide-number: true
     logo: img/logo.png
-    footer: "https://cven5873-ss23.github.io/website/"
+    footer: "[{{< fa link >}} {{< var course.site-short >}}]({{< var course.site >}})"
 editor: source
 execute:
   freeze: auto
@@ -16,7 +16,6 @@ params:
     week: 2
 ---
 
-<script defer data-domain="cven5837-ss23.github.io/website" src="https://plausible.io/js/plausible.js"></script>
 
 ```{r}
 #| include: false
@@ -39,17 +38,21 @@ library(magrittr)
 
 ::: {.column width="50%"}
 - Environmental Engineer  
-- Open Science Specialist at ETH Zurich
+- [Open Science Specialist at ETH Zurich](https://ghe.ethz.ch/about/people/person-detail.MjkyODc2.TGlzdC80MTI2LC0xNDYwMDMwNTU3.html)
 - Independent Instructor for Data Science with R  
-- Twitter: [@larnsce](https://twitter.com/larnsce)
+- LinkedIn: [Lars Schöbitz](https://www.linkedin.com/in/larsschoebitz/)
 :::
 :::
 
 ## Learning Goals (for the course)
 
+::: incremental
+
 1. Be able to use a common set of data science tools **(R, RStudio IDE, Git, GitHub, tidyverse, Quarto)** to illustrate and communicate the utility of solutions for water, sanitation, air quality, and global health.
 
 2. Learn to use the **Quarto file format** and the RStudio IDE visual editing mode to produce **scholarly documents** with citations, footnotes, cross-references, figures, and tables.
+
+:::
 
 ## Why are you here?
 
@@ -83,23 +86,11 @@ What does the item you have picked have to do with the reason for you being here
 Share with us from which country you are joining us.
 :::
 
-
-## Topics
-
-::: {.incremental}
--   The data science life-cycle
--   Data organization in spreadsheets
--   Exploratory data analysis using visualization
--   Concept of tidy data and data tidying
--   Data transformation and descriptive statistics
--   Data communication using the Quarto open-source scientific and technical publishing system
-:::
-
 ## Learning Objectives (for this week)
 
 ```{r}
 
-lobj1 <- readr::read_csv(here::here("data/tbl-02-cven5837-ss23-learning-objectives.csv")) |>
+lobj1 <- readr::read_csv(here::here("data/tbl-02-learning-objectives.csv")) |>
   dplyr::filter(week == params$week) |>
   dplyr::pull(learning_objectives)
 
@@ -145,7 +136,7 @@ Artwork from [@juliesquid](https://twitter.com/juliesquid) for [@openscapes](htt
 - tidyverse R Packages
 - Quarto publishing system
 
-## [cven5873-ss23.github.io/website/](https://cven5873-ss23.github.io/website/) `r emo::ji("bookmark")`
+## [{{< var course.site-short >}}]({{< var course.site >}}) `r emo::ji("bookmark")`
 
 # Posit Cloud {background-color="#0F4C81"}
 
@@ -193,14 +184,20 @@ Photo by [Brahm Naus](https://unsplash.com/photos/N1gUD_dCvJE)
 Photo by [Daniel Korpai](https://unsplash.com/photos/N1gUD_dCvJE)
 :::
 
+# Email from GitHub? {background-color="#0F4C81"}
+
+## Please accept the invitation to the GitHub organisation for the course
+
+![](img/lec-01/github-invitation.png)
+
 # Live Coding Exercise {background-color="#0F4C81"}
 
-## live-01a-setup - Posit Cloud Setup
+## git-configuration
 
 ::: {.callout-note}
 ## **Follow along on the screen**
-1. Open the GitHub organisation for the course: <https://github.com/cven5873-ss23>
-2. You will find a repository titled: **course-material-USERNAME** (with your GitHub Username)
+1. Open the GitHub organisation for the course: [{{< var course.github-org >}}]({{< var course.github-org >}})
+2. You will find a repository titled: **wk-02-USERNAME** (with your GitHub Username)
 3. You will "clone" this repository to Posit Cloud
 :::
 
@@ -402,12 +399,12 @@ Together, tidying and transforming are called wrangling, because getting your da
 
 # Live Coding Exercise {background-color="#0F4C81"}
 
-## live-01b-data-science-lifecycle - Data Science Lifecycle
+## live-data-science-lifecycle
 
 1. Head over to posit.cloud
-2. Open the workspace for the course (cven5837-ss23)
+2. Open the workspace for the course {{< var course.code >}}
 3. Open "Projects"
-4. Open the "course-materials-USERNAME" project
+4. Open the "wk-02-USERNAME" project
 5. Follow along with me
 
 ## Break
@@ -559,8 +556,8 @@ Rules of `dplyr` functions:
 |----------|-------------------------------------------|
 | **Monday**   |  Lecture              |
 | **Tuesday**  |                                   |
-| **Wednesday** | Feedback (grading) on assignments from previous week |
-| **Thursday** | Student hours on Zoom (10 am to 12 pm CEST) |
+| **Wednesday** |  |
+| **Thursday** | Feedback (grading) on assignments from previous week |
 | **Friday**   | Homework assignment and learning reflection are due             |
 
 ## Homework assignments
@@ -583,21 +580,14 @@ Rules of `dplyr` functions:
 - Data analysis project report with a data set of your choice
 - Graded as number of points out of 100 pts for pre-defined graded elements
 - Submitted as rendered Quarto document on GitHub
-- weighted at 20% of the total grade
-
-## Exam
-
-- 2-hour exam assessing the technical skills taught during the course
-- Graded as number of points out of 100 pts for pre-defined graded elements
-- Submitted as rendered Quarto document, but **not** on GitHub
-- weighted at 20% of the total grade
+- weighted at 40% of the total grade
 
 ## Grading {.smaller .scrollable}
 
 ```{r}
 
 
-readr::read_csv(here::here("data/tbl-03-cven5837-ss23-grading-scheme.csv")) |> 
+readr::read_csv(here::here("data/tbl-03-grading-scheme.csv")) |> 
   gt::gt() |> 
   gt::tab_header("Conversion from percent to grades.")
 
@@ -609,19 +599,20 @@ readr::read_csv(here::here("data/tbl-03-cven5837-ss23-grading-scheme.csv")) |>
 - work not submitted by the due date will receive 0 pts
 - the lowest score for each of the assignments or learning reflections is dropped
 
-# Homework week 1 {background-color="#0F4C81"}
+# Homework week 2 {background-color="#0F4C81"}
 
 ## Homework due dates
 
-- All material on [course website](https://cven5873-ss23.github.io/website/weeks/wk-01.html)
-- Homework assignment & learning reflection due: **Friday, June 16th** 
+- All material on [course website]({{< var course.site >}}weeks/wk-01.html)
+- Homework assignment & learning reflection due: [**{{< var md-02.homework-due >}}**]{.highlight-yellow} 
 
 # Thanks! `r emo::ji("sunflower")`  {background-color="#0F4C81"}
 
 ## 
 
 Slides created via revealjs and Quarto: https://quarto.org/docs/presentations/revealjs/ 
-Access slides as [PDF on GitHub](https://github.com/cven5873-ss23/website/raw/main/slides/lec-01-welcome.pdf)
+
+Access slides as [PDF on GitHub]({{< var course.github-org >}}/website/raw/main/slides/lec-01-welcome.pdf)
 
 All material is licensed under [Creative Commons Attribution Share Alike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). 
 

@@ -6,13 +6,11 @@ execute:
   warning: false
 ---
 
-<script defer data-domain="cven5837-ss23.github.io/website" src="https://plausible.io/js/plausible.js"></script>
+# CVEN 5999: Special Topics - Data Analytics for Development
 
-# CVEN 5837: Special Topics - Data Analytics for Development
+Summer Online - Session C - June 2, 2025 - July 25, 2025; Monday 12:30 - 3:00 pm MT
 
-Summer Online - Session C - June 5, 2022 - July 28, 2023; Monday 12:00 - 2:30pm MT
-
-Instructor: [Lars Schöbitz](https://www.colorado.edu/center/mortenson/lars-schobitz)
+Instructor: [Lars Schöbitz](https://www.linkedin.com/in/larsschoebitz/)
 
 # Course Information
 
@@ -40,7 +38,7 @@ We will rely entirely on open source and open access material for this course. W
 # Course Calendar
 
 ```{r}
-readr::read_csv("data/tbl-01-cven5837-ss23-course-schedule.csv") |> 
+readr::read_csv("data/tbl-01-course-schedule.csv") |> 
   dplyr::select(date, week, topic = title, note) |> 
   dplyr::mutate(date = format(date, format = "%d %B %Y")) |> 
   knitr::kable()
@@ -53,8 +51,8 @@ readr::read_csv("data/tbl-01-cven5837-ss23-course-schedule.csv") |>
 |----------|-------------------------------------------|
 | **Monday**   |  Lecture              |
 | **Tuesday**  |                                   |
-| **Wednesday** | Feedback (grading) on assignments from previous week |
-| **Thursday** | Student hours on Zoom (10 am to 12 pm CEST) |
+| **Wednesday** |  |
+| **Thursday** |       Feedback (grading) on assignments from previous week   |
 | **Friday**   | Homework assignment and learning reflection are due             |
 
 # Assignments
@@ -81,7 +79,7 @@ Grades will be recorded in Canvas throughout the semester. Homework assignments 
 
 ```{r}
 
-readr::read_csv(here::here("data/tbl-03-cven5837-ss23-grading-scheme.csv")) |> 
+readr::read_csv(here::here("data/tbl-03-grading-scheme.csv")) |> 
   gt::gt() |> 
   gt::tab_header("Conversion from percent to grades.")
 
