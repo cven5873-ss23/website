@@ -9,8 +9,8 @@ This is a Quarto-based course website for CVEN 5999: Special Topics - Data Analy
 ## Architecture
 
 ### Content Structure
-- **Main pages**: Course overview (`index.qmd`), project details (`project/index.qmd`), schedule (`schedule.qmd`)
-- **Weekly content**: Located in `weeks/` directory (wk-01.qmd through wk-08.qmd)
+- **Main pages**: Course overview (`index.qmd`), project details (`project/index.qmd`)
+- **Weekly content**: Located in `weeks/` directory (wk-01.qmd through wk-07.qmd)
 - **Lecture slides**: Located in `slides/` directory with RevealJS format (.qmd files)
 - **Data**: Course data and R scripts in `data/` directory
 - **Images**: Organized by lecture in `slides/img/` with subdirectories
@@ -18,7 +18,7 @@ This is a Quarto-based course website for CVEN 5999: Special Topics - Data Analy
 ### Configuration
 - **Main config**: `_quarto.yml` - Controls website structure, theme, sidebar navigation
 - **Variables**: `_variables.yml` - Course-specific variables (dates, titles, GitHub org)
-- **Theme**: `theme.scss` and `slides.scss` for styling
+- **Theme**: `theme.scss` and `style/slides.scss` for styling
 - **Output**: Builds to `docs/` directory for GitHub Pages deployment
 
 ### Key Technologies
@@ -50,10 +50,7 @@ quarto preview slides/lec-01-welcome.qmd
 ```
 
 ### Publishing
-```bash
-# Publish to GitHub Pages (builds to docs/ directory)
-quarto publish gh-pages
-```
+Run `quarto render` and commit the updated `docs/` folder. GitHub Pages serves the site from `docs/`.
 
 ## Content Guidelines
 
